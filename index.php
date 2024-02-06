@@ -62,6 +62,33 @@
         <h1 class="text-center pt-4">
             PHP HOTEL
         </h1>
+
+        <div>
+            <table class="table">
+                <thead class="thead-dark text-center">
+                    <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Vote</th>
+                    <th scope="col">Distance to Center</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <?php
+                        foreach ($hotels as $hotel) {
+                            echo '<tr>';
+                            echo '<td>'.$hotel['name'].'</td>';
+                            echo '<td>'.$hotel['description'].'</td>';
+                            echo '<td>'.($hotel['parking'] ? 'Available' : 'Not Available').'</td>';
+                            echo '<td>'.$hotel['vote'].'/5</td>';
+                            echo '<td>'.$hotel['distance_to_center'].' Km</td>';
+                            echo '</tr>';
+                        }
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
